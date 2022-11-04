@@ -1,10 +1,10 @@
 package modelo;
 
+import java.time.LocalDate;
+
 public class Pessoa {
 	
-	private String nome, email, nomeUsuario, estado, cidade;	
-	private Integer cpf, dataNasc;
-	
+	private String email;
 	public String getEmail() {
 		return email;
 	}
@@ -12,6 +12,7 @@ public class Pessoa {
 		this.email = email;
 	}
 	
+	private String nomeUsuario;
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -19,6 +20,7 @@ public class Pessoa {
 		this.nomeUsuario = nomeUsuario;
 	}
 	
+	private String estado;
 	public String getEstado() {
 		return estado;
 	}
@@ -26,6 +28,7 @@ public class Pessoa {
 		this.estado = estado;
 	}
 	
+	private String cidade;
 	public String getCidade() {
 		return cidade;
 	}
@@ -33,13 +36,15 @@ public class Pessoa {
 		this.cidade = cidade;
 	}
 	
-	public Integer getDataNasc() {
+	private LocalDate dataNasc;
+	public LocalDate getDataNasc() {
 		return dataNasc;
 	}
-	public void setDataNasc(Integer dataNasc) {
+	public void setDataNasc(LocalDate dataNasc) {
 		this.dataNasc = dataNasc;
 	}
 	
+	private String nome;
 	public String getNome() {
 		return nome;
 	}
@@ -47,6 +52,7 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
+	private Integer cpf;
 	public Integer getCpf() {
 		return cpf;
 	}
