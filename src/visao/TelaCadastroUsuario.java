@@ -1,18 +1,17 @@
 package visao;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class TelaCadastroUsuario extends JFrame {
 
@@ -22,22 +21,6 @@ public class TelaCadastroUsuario extends JFrame {
 	private JTextField textEmail;
 	private JTextField textCpf;
 	private JTextField textField;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaCadastroUsuario frame = new TelaCadastroUsuario();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -51,80 +34,80 @@ public class TelaCadastroUsuario extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblCadUsuario = new JLabel("CADASTRE-SE");
 		lblCadUsuario.setForeground(new Color(255, 51, 153));
 		lblCadUsuario.setFont(new Font("Segoe Script", Font.PLAIN, 25));
 		lblCadUsuario.setBounds(180, 28, 227, 30);
 		contentPane.add(lblCadUsuario);
-		
+
 		JLabel lblNome = new JLabel("Nome completo:");
 		lblNome.setForeground(new Color(153, 51, 102));
 		lblNome.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNome.setBounds(10, 79, 147, 30);
 		contentPane.add(lblNome);
-		
+
 		textNomeUsuario = new JTextField();
 		textNomeUsuario.setBounds(10, 120, 237, 20);
 		contentPane.add(textNomeUsuario);
 		textNomeUsuario.setColumns(10);
-		
+
 		JLabel lblCasdDataNasc = new JLabel("Data de nascimento:");
 		lblCasdDataNasc.setForeground(new Color(153, 51, 102));
 		lblCasdDataNasc.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblCasdDataNasc.setBounds(294, 87, 173, 22);
 		contentPane.add(lblCasdDataNasc);
-		
+
 		textDataNasc = new JTextField();
 		textDataNasc.setBounds(296, 120, 122, 20);
 		contentPane.add(textDataNasc);
 		textDataNasc.setColumns(10);
-		
+
 		JLabel lblNewLabel = new JLabel("E-mail:");
 		lblNewLabel.setForeground(new Color(153, 51, 102));
 		lblNewLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel.setBounds(221, 163, 76, 14);
 		contentPane.add(lblNewLabel);
-		
+
 		textEmail = new JTextField();
 		textEmail.setBounds(229, 188, 330, 20);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
-		
+
 		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setForeground(new Color(153, 51, 102));
 		lblCpf.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblCpf.setBounds(10, 164, 46, 14);
 		contentPane.add(lblCpf);
-		
+
 		textCpf = new JTextField();
 		textCpf.setText("");
 		textCpf.setBounds(10, 188, 147, 20);
 		contentPane.add(textCpf);
 		textCpf.setColumns(10);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("UF:");
 		lblNewLabel_1.setForeground(new Color(153, 51, 102));
 		lblNewLabel_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(10, 248, 46, 14);
 		contentPane.add(lblNewLabel_1);
-		
+
 		JComboBox comboBoxEstado = new JComboBox();
 		comboBoxEstado.setBackground(new Color(255, 255, 204));
 		comboBoxEstado.setBounds(59, 247, 76, 22);
 		contentPane.add(comboBoxEstado);
-		
+
 		JLabel lblCidade = new JLabel("Cidade:");
 		lblCidade.setForeground(new Color(153, 51, 102));
 		lblCidade.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblCidade.setBounds(208, 248, 76, 14);
 		contentPane.add(lblCidade);
-		
+
 		textField = new JTextField();
 		textField.setBounds(294, 248, 162, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		JButton btnNewButton = new JButton("Cadastrar-se");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -135,6 +118,18 @@ public class TelaCadastroUsuario extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton.setBounds(221, 301, 133, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnVoltarLogin = new JButton("VOLTAR");
+		btnVoltarLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				TelaLogin telaLogin = new TelaLogin();
+				telaLogin.setLocationRelativeTo(null);
+				telaLogin.setVisible(true);
+			}
+		});
+		btnVoltarLogin.setBounds(10, 11, 89, 23);
+		contentPane.add(btnVoltarLogin);
 	}
 
 }

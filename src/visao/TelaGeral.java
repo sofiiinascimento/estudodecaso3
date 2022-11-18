@@ -1,37 +1,18 @@
 package visao;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JTable;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
 
 public class TelaGeral extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table_1;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaGeral frame = new TelaGeral();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -45,11 +26,11 @@ public class TelaGeral extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		table_1 = new JTable();
 		table_1.setBounds(70, 418, 409, -188);
 		contentPane.add(table_1);
-		
+
 		JButton btnNewButton = new JButton("Cadastrar um livro");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(379, 11, 143, 32);
