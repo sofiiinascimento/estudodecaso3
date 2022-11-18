@@ -83,25 +83,6 @@ public class TelaCadastroLivro extends JFrame {
 		lblNewLabel_2.setBounds(22, 207, 146, 14);
 		getContentPane().add(lblNewLabel_2);
 		
-		JCheckBox chckbxGenRom = new JCheckBox("Romance");
-		chckbxGenRom.setBackground(new Color(255, 255, 255));
-		chckbxGenRom.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		chckbxGenRom.setBounds(22, 228, 79, 23);
-		getContentPane().add(chckbxGenRom);
-		
-		JCheckBox chckbxGenFant = new JCheckBox("Fantasia");
-		chckbxGenFant.setBackground(new Color(255, 255, 255));
-		chckbxGenFant.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		chckbxGenFant.setBounds(103, 229, 79, 23);
-		getContentPane().add(chckbxGenFant);
-		
-		JCheckBox chckbxGenAcao = new JCheckBox("Ação");
-		chckbxGenAcao.setBackground(new Color(255, 255, 255));
-		chckbxGenAcao.setForeground(new Color(0, 0, 0));
-		chckbxGenAcao.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		chckbxGenAcao.setBounds(187, 233, 60, 14);
-		getContentPane().add(chckbxGenAcao);
-		
 		JLabel lblNewLabel_3 = new JLabel("Quantidade de páginas:");
 		lblNewLabel_3.setForeground(new Color(153, 0, 102));
 		lblNewLabel_3.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
@@ -134,5 +115,9 @@ public class TelaCadastroLivro extends JFrame {
 		lblNewLabel_4.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel_4.setBounds(369, 70, 117, 26);
 		getContentPane().add(lblNewLabel_4);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(22, 232, 125, 22);
+		getContentPane().add(comboBox);
 	}
 }
