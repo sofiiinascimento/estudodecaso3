@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaGeral extends JFrame {
 
@@ -32,6 +34,14 @@ public class TelaGeral extends JFrame {
 		contentPane.add(table_1);
 
 		JButton btnNewButton = new JButton("Cadastrar um livro");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				TelaCadastroLivro telaCadLivro = new TelaCadastroLivro();
+				telaCadLivro.setLocationRelativeTo(null);
+				telaCadLivro.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(379, 11, 143, 32);
 		contentPane.add(btnNewButton);

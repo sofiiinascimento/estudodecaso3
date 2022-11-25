@@ -16,6 +16,7 @@ public class TelaCadastroLivro extends JFrame {
 	private JTextField textFieldNomeLivro;
 	private JTextField textFieldNomeAutor;
 	private JTextField textFieldQuantPag;
+	private JComboBox areraGenero;
 
 	/**
 	 * Create the frame.
@@ -60,7 +61,7 @@ public class TelaCadastroLivro extends JFrame {
 		lblNewLabel_2.setForeground(new Color(153, 0, 102));
 		lblNewLabel_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel_2.setBounds(22, 207, 146, 14);
-		getContentPane().add(lblNewLabel_2);
+		getContentPane().add(lblNewLabel_2);	
 
 		JLabel lblNewLabel_3 = new JLabel("Quantidade de páginas:");
 		lblNewLabel_3.setForeground(new Color(153, 0, 102));
@@ -94,9 +95,22 @@ public class TelaCadastroLivro extends JFrame {
 		lblNewLabel_4.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel_4.setBounds(369, 70, 117, 26);
 		getContentPane().add(lblNewLabel_4);
+		
+		JComboBox comboBoxGenero = new JComboBox();
+		comboBoxGenero.setBounds(22, 232, 160, 22);
+		getContentPane().add(comboBoxGenero);
+		
+		JComboBox<String> comboboxGenero = new JComboBox();
+		comboBoxGenero.setBounds(107, 11, 115, 22);
+		
+		comboBoxGenero.addItem("Sr");
+		comboBoxGenero.addItem("Sra");
+		comboBoxGenero.addItem("Srta");
+		
+		contentPane.add(comboBoxGenero);
+		
+		
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(22, 232, 125, 22);
-		getContentPane().add(comboBox);
+		
 	}
 }
