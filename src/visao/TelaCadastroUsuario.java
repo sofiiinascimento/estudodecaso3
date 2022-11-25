@@ -141,6 +141,11 @@ public class TelaCadastroUsuario extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				dispose();
+				TelaGeral telaGeralG = new TelaGeral();
+				telaGeralG.setLocationRelativeTo(null);
+				telaGeralG.setVisible(true);
+				
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 51, 153));
