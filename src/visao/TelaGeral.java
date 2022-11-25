@@ -19,7 +19,7 @@ public class TelaGeral extends JFrame {
 	 */
 	public TelaGeral() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 561, 508);
+		setBounds(100, 100, 569, 662);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
