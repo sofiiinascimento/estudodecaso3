@@ -111,11 +111,6 @@ public class TelaCadastroUsuario extends JFrame {
 		lblNewLabel_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(10, 298, 46, 14);
 		contentPane.add(lblNewLabel_1);
-
-		JComboBox comboBoxEstado = new JComboBox();
-		comboBoxEstado.setBackground(new Color(255, 255, 204));
-		comboBoxEstado.setBounds(64, 297, 76, 22);
-		contentPane.add(comboBoxEstado);
 		lblNewLabel_1.setBounds(10, 308, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
