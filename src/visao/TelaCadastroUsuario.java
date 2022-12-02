@@ -2,6 +2,7 @@ package visao;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,10 +10,13 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controle.PessoaControl;
+import controle.Pessoa;
 public class TelaCadastroUsuario extends JFrame {
 
 	private JPanel contentPane;
@@ -167,6 +171,22 @@ public class TelaCadastroUsuario extends JFrame {
 		JButton btnNewButton = new JButton("Cadastrar-se");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String nome = textNomeUsuario.getText();
+				String dataNasc = textDataNasc.getText();
+				String email = textEmail.getText();
+				String cpf = textCpf.getText();
+				// cadastro da uf
+				String cidade = textField.getText();
+				
+				
+				modelo.Pessoa novaPessoa = new modelo.Pessoa ();	
+				if (nome == null || nome.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo nome não foi preenchido!");
+					
+				} else {
+					novaPessoa.setNome(nome);
+				}
 				
 				dispose();
 				TelaGeral telaGeralG = new TelaGeral();
