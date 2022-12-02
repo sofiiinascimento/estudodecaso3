@@ -19,6 +19,7 @@ public class PessoaControl {
 
 		if (instancia == null) {
 			instancia = new PessoaControl();
+			
 		}
 
 		return instancia;

@@ -6,9 +6,18 @@ import modelo.Livro;
 
 public class LivroControl {
 	
-	private ArrayList<Livro> tabelaLivros;
+	public static ArrayList<Livro> tabelaLivros;
+	private static LivroControl instancia;
 	
-	public LivroControl() { this.tabelaLivros = new ArrayList<>(); } 
+	public static LivroControl getInstancia() {
+
+		if (instancia == null) {
+				instancia = new LivroControl();
+				tabelaLivros = new ArrayList<>();
+		}
+
+		return instancia;
+	} 
 	
 	public boolean inserir(Livro l) {
 		
