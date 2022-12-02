@@ -225,7 +225,7 @@ public class TelaCadastroUsuario extends JFrame {
 					novaPessoa.setSenha(senha);
 				}
 				
-				PessoaControl tabelaPessoa = new PessoaControl();
+				PessoaControl tabelaPessoa =  PessoaControl.getInstancia();
 				boolean inserir = tabelaPessoa.inserir(novaPessoa);
 
 				if (inserir == true) {
@@ -235,6 +235,8 @@ public class TelaCadastroUsuario extends JFrame {
 					textDataNasc.setText(null);
 					textEmail.setText(null);
 					textCpf.setText(null);
+					textCidade.setText(null);
+					textSenha.setText(null);
 				} else {
 					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
 				}
