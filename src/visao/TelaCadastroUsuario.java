@@ -181,6 +181,7 @@ public class TelaCadastroUsuario extends JFrame {
 				String cpf = textCpf.getText();
 				String cidade = textCidade.getText();
 				String senha = textSenha.getText();
+				String item = (String) areaEstado.getSelectedItem();
 				
 				
 				modelo.Pessoa novaPessoa = new modelo.Pessoa ();	
@@ -225,10 +226,7 @@ public class TelaCadastroUsuario extends JFrame {
 				} else {
 					novaPessoa.setSenha(senha);
 				}
-				
-				String item = (String) areaEstado.getSelectedItem();
-				System.out.println(item);
-				
+								
 				PessoaControl tabelaPessoa =  PessoaControl.getInstancia();
 				boolean inserir = tabelaPessoa.inserir(novaPessoa);
 
