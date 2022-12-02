@@ -7,7 +7,11 @@ public class Pessoa {
 	private String nome;
 	private String email;
 	private String senha;
+	private String dataNasc;
+	private String cpf;
+	private String cidade;
 	private ArrayList<Livro> livrosPessoa;
+	
 
 	public String getNome() {
 		return nome;
@@ -23,6 +27,14 @@ public class Pessoa {
 
 	public void setLivrosPessoa(ArrayList<Livro> livrosPessoa) {
 		this.livrosPessoa = livrosPessoa;
+	}
+	
+	public String getDataNasc() {
+		return dataNasc;
+	}
+	
+	public void setDataNasc(String dataNasc) {
+		this.dataNasc = dataNasc;
 	}
 
 	public String getEmail() {
@@ -40,5 +52,24 @@ public class Pessoa {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	
+
+	
 
 }

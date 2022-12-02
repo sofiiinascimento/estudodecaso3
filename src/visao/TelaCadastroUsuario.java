@@ -2,7 +2,6 @@ package visao;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,7 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import controle.PessoaControl;
-import controle.Pessoa;
+import modelo.Pessoa;
+
 public class TelaCadastroUsuario extends JFrame {
 
 	private JPanel contentPane;
@@ -25,6 +25,8 @@ public class TelaCadastroUsuario extends JFrame {
 	private JTextField textEmail;
 	private JTextField textCpf;
 	private JTextField textField;
+	private JTextField textCidade;
+	private JTextField textSenha;
 
 	/**
 	 * Create the frame.
@@ -118,7 +120,7 @@ public class TelaCadastroUsuario extends JFrame {
 		lblNewLabel_1.setBounds(10, 308, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JComboBox<String> areaEstado = new JComboBox();
+		JComboBox<String> areaEstado = new JComboBox<String>();
 		areaEstado.setBounds(48, 307, 89, 22);
 		
 		areaEstado.addItem(" ");
@@ -163,21 +165,21 @@ public class TelaCadastroUsuario extends JFrame {
 		lblCidade.setBounds(212, 308, 76, 14);
 		contentPane.add(lblCidade);
 
-		textField = new JTextField();
-		textField.setBounds(305, 308, 162, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textCidade = new JTextField();
+		textCidade.setBounds(305, 308, 162, 20);
+		contentPane.add(textCidade);
+		textCidade.setColumns(10);
 
 		JButton btnNewButton = new JButton("Cadastrar-se");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				String nome = textNomeUsuario.getText();
 				String dataNasc = textDataNasc.getText();
 				String email = textEmail.getText();
 				String cpf = textCpf.getText();
-				// cadastro da uf
-				String cidade = textField.getText();
+				String cidade = textCidade.getText();
+				String senha = textSenha.getText();
 				
 				
 				modelo.Pessoa novaPessoa = new modelo.Pessoa ();	
@@ -186,6 +188,41 @@ public class TelaCadastroUsuario extends JFrame {
 					
 				} else {
 					novaPessoa.setNome(nome);
+				}
+				
+				if (dataNasc == null || dataNasc.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo da data de nascimento não foi preenchido!");
+					
+				} else {
+					novaPessoa.setDataNasc(dataNasc);
+				}
+				
+				if (email == null || email.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo do email não foi preenchido!");
+					
+				} else {
+					novaPessoa.setEmail(email);
+				}
+				
+				if (cpf == null || cpf.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo do CPF não foi preenchido!");
+					
+				} else {
+					novaPessoa.setCpf(cpf);
+				}
+				
+				if (cidade == null || cidade.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo da cidade não foi preenchido!");
+					
+				} else {
+					novaPessoa.setCidade(cidade);
+				}
+				
+				if (senha == null || senha.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo da senha não foi preenchido!");
+					
+				} else {
+					novaPessoa.setSenha(senha);
 				}
 				
 				dispose();
@@ -214,6 +251,16 @@ public class TelaCadastroUsuario extends JFrame {
 		});
 		btnVoltarLogin.setBounds(10, 11, 89, 23);
 		contentPane.add(btnVoltarLogin);
+		
+		JLabel lblNewLabel_2 = new JLabel("Senha:");
+		lblNewLabel_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
+		lblNewLabel_2.setForeground(new Color(153, 51, 102));
+		lblNewLabel_2.setBounds(10, 370, 63, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		textSenha = new JTextField();
+		textSenha.setBounds(83, 370, 141, 20);
+		contentPane.add(textSenha);
+		textSenha.setColumns(10);
 	}
-
 }
