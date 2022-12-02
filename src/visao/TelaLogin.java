@@ -2,6 +2,7 @@ package visao;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -14,12 +15,16 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 
+import controle.PessoaControl;
+import modelo.Pessoa;
+import javax.swing.JPasswordField;
+
 public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUsuario;
-	private JTextField txtSenha;
 	private JButton btnCadastrar;
+	private JPasswordField pwdSenha;
 
 	/**
 	 * Launch the application.
@@ -57,22 +62,28 @@ public class TelaLogin extends JFrame {
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 
-		txtSenha = new JTextField();
-		txtSenha.setBounds(73, 253, 86, 20);
-		contentPane.add(txtSenha);
-		txtSenha.setColumns(10);
-
 		JButton btnLogar = new JButton("LOGAR");
 		btnLogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// VALIDAR O LOGIN
-
-				// SE A PESSOA EXISTE
-				dispose();
-				TelaGeral telaGeral = new TelaGeral();
-				telaGeral.setLocationRelativeTo(null);
-				telaGeral.setVisible(true);
+				String nome = txtUsuario.getText();
+				String senha = pwdSenha.getText();
+				
+				PessoaControl tabelaPessoas = new PessoaControl();
+				Pessoa pessoa = tabelaPessoas.efetuarLogin(nome, senha);
+				
+				if (pessoa != null) {
+					
+					dispose();
+					TelaGeral telaGeral = new TelaGeral();
+					telaGeral.setLocationRelativeTo(null);
+					telaGeral.setVisible(true);
+					
+				} else {
+					JOptionPane.showMessageDialog(null,"Não foi possível achar esse usuário :(");
+				}
+				
+			
 			}
 		});
 		btnLogar.setBounds(45, 319, 89, 23);
@@ -112,5 +123,9 @@ public class TelaLogin extends JFrame {
 		JLabel lblNewLabel_3 = new JLabel("Nome");
 		lblNewLabel_3.setBounds(10, 215, 46, 14);
 		contentPane.add(lblNewLabel_3);
+		
+		pwdSenha = new JPasswordField();
+		pwdSenha.setBounds(73, 267, 129, 19);
+		contentPane.add(pwdSenha);
 	}
 }

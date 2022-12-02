@@ -23,7 +23,7 @@ public class PessoaControl {
 	/**
 	 * CONSTRUTOR DA CLASSE
 	 */
-	private PessoaControl() {
+	public PessoaControl() {
 	}
 
 	// INSERT
