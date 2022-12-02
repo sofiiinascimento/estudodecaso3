@@ -26,11 +26,11 @@ public class Livro {
 		this.genero = genero;
 	}
 
-	private Integer quantPag;
-	public Integer getQuantPag() {
+	private String quantPag;
+	public String getQuantPag() {
 			return quantPag;
 	}
-	public void setQuantPag(Integer quantPag) {
+	public void setQuantPag(String quantPag) {
 		this.quantPag = quantPag;
 	}
 }

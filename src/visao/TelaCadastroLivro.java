@@ -1,6 +1,7 @@
 package visao;
 
 import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,13 +10,16 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import modelo.Livro;
+
 public class TelaCadastroLivro extends JFrame {
-	private JTextField textFieldNomeLivro;
-	private JTextField textFieldNomeAutor;
-	private JTextField textFieldQuantPag;
+	private JTextField textNomeLivro;
+	private JTextField textNomeAutor;
+	private JTextField textQuantPag;
 	private JComboBox areraGenero;
 
 	/**
@@ -29,10 +33,10 @@ public class TelaCadastroLivro extends JFrame {
 		setBounds(100, 100, 568, 562);
 		getContentPane().setLayout(null);
 
-		textFieldNomeLivro = new JTextField();
-		textFieldNomeLivro.setBounds(22, 150, 286, 20);
-		getContentPane().add(textFieldNomeLivro);
-		textFieldNomeLivro.setColumns(10);
+		textNomeLivro = new JTextField();
+		textNomeLivro.setBounds(22, 150, 286, 20);
+		getContentPane().add(textNomeLivro);
+		textNomeLivro.setColumns(10);
 
 		JLabel lblNewLabel = new JLabel("CADASTRE UM LIVRO");
 		lblNewLabel.setFont(new Font("Segoe Script", Font.PLAIN, 25));
@@ -52,10 +56,10 @@ public class TelaCadastroLivro extends JFrame {
 		lblNomeAutor_2.setBounds(22, 202, 160, 14);
 		getContentPane().add(lblNomeAutor_2);
 
-		textFieldNomeAutor = new JTextField();
-		textFieldNomeAutor.setBounds(22, 227, 286, 20);
-		getContentPane().add(textFieldNomeAutor);
-		textFieldNomeAutor.setColumns(10);
+		textNomeAutor = new JTextField();
+		textNomeAutor.setBounds(22, 227, 286, 20);
+		getContentPane().add(textNomeAutor);
+		textNomeAutor.setColumns(10);
 
 		JLabel lblNewLabel_2 = new JLabel("Gênero:");
 		lblNewLabel_2.setForeground(new Color(153, 0, 102));
@@ -69,15 +73,36 @@ public class TelaCadastroLivro extends JFrame {
 		lblNewLabel_3.setBounds(22, 344, 198, 25);
 		getContentPane().add(lblNewLabel_3);
 
-		textFieldQuantPag = new JTextField();
-		textFieldQuantPag.setBounds(22, 380, 68, 20);
-		getContentPane().add(textFieldQuantPag);
-		textFieldQuantPag.setColumns(10);
+		textQuantPag = new JTextField();
+		textQuantPag.setBounds(22, 380, 68, 20);
+		getContentPane().add(textQuantPag);
+		textQuantPag.setColumns(10);
 
 		JButton btnCadastroLivro = new JButton("Cadastrar");
 		btnCadastroLivro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String nomeLivro = textNomeLivro.getText();
+				String nomeAutor = textNomeAutor.getText();
+				String quantPag = textQuantPag.getText();
 				
+				modelo.Livro novoLivro = new modelo.Livro ();
+				if (nomeLivro == null || nomeLivro.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo nome do livro não foi preenchido");				
+				} else {
+					novoLivro.setTituloLivro(nomeLivro);
+				}
+				
+				if (nomeAutor == null || nomeAutor.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo nome do autor não foi preenchido");				
+				} else {
+					novoLivro.setAutor(nomeAutor);
+				}
+				
+				if (quantPag == null || quantPag.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo da quantidade de páginas não foi preenchido");				
+				} else {
+					novoLivro.setQuantPag(quantPag);
+				}
 			}
 		});
 		btnCadastroLivro.setBackground(new Color(204, 153, 153));
