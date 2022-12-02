@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controle.LivroControl;
 import modelo.Livro;
 
 public class TelaCadastroLivro extends JFrame {
@@ -77,6 +78,13 @@ public class TelaCadastroLivro extends JFrame {
 		textQuantPag.setBounds(22, 380, 68, 20);
 		getContentPane().add(textQuantPag);
 		textQuantPag.setColumns(10);
+		
+		JComboBox<String> areaGenero = new JComboBox<>();
+		areaGenero.setBounds(22, 299, 115, 22);
+		areaGenero.addItem(" ");
+		areaGenero.addItem("Fantasia");
+		areaGenero.addItem("Romance");
+		getContentPane().add(areaGenero);
 
 		JButton btnCadastroLivro = new JButton("Cadastrar");
 		btnCadastroLivro.addActionListener(new ActionListener() {
@@ -84,6 +92,7 @@ public class TelaCadastroLivro extends JFrame {
 				String nomeLivro = textNomeLivro.getText();
 				String nomeAutor = textNomeAutor.getText();
 				String quantPag = textQuantPag.getText();
+				String genero = (String) areaGenero.getSelectedItem();
 				
 				modelo.Livro novoLivro = new modelo.Livro ();
 				if (nomeLivro == null || nomeLivro.isEmpty()) {
@@ -103,6 +112,32 @@ public class TelaCadastroLivro extends JFrame {
 				} else {
 					novoLivro.setQuantPag(quantPag);
 				}
+				
+				if (genero == null || genero.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo do gênero não foi preenchido");				
+				} else {
+					novoLivro.setQuantPag(genero);
+				}
+				
+				LivroControl tabelaLivro = LivroControl.getInstancia();
+				boolean inserir = tabelaLivro.inserir(novoLivro);
+				
+				if (inserir == true) {
+					JOptionPane.showMessageDialog(null,"Livro cadastrado com sucesso!");
+					
+					textNomeLivro.setText(null);
+					textNomeAutor.setText(null);
+					textQuantPag.setText(null);
+					areaGenero.setAction(null);
+				} else {
+					JOptionPane.showMessageDialog(null,"Erro ao cadastrar!!!");
+				}
+				
+				dispose();
+				TelaGeral telaGeralG = new TelaGeral();
+				telaGeralG.setLocationRelativeTo(null);
+				telaGeralG.setVisible(true);
+				
 			}
 		});
 		btnCadastroLivro.setBackground(new Color(204, 153, 153));
@@ -121,13 +156,6 @@ public class TelaCadastroLivro extends JFrame {
 		lblNewLabel_4.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		lblNewLabel_4.setBounds(367, 144, 117, 26);
 		getContentPane().add(lblNewLabel_4);
-
-		JComboBox<String> comboboxGenero = new JComboBox<>();
-		comboboxGenero.setBounds(22, 299, 115, 22);
-		comboboxGenero.addItem("Sr");
-		comboboxGenero.addItem("Sra");
-		comboboxGenero.addItem("Srta");
-		getContentPane().add(comboboxGenero);
 		
 		JButton btnNewButton = new JButton("VOLTAR");
 		btnNewButton.addActionListener(new ActionListener() {
