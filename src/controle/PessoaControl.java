@@ -9,17 +9,12 @@ public class PessoaControl {
 	private static ArrayList<Pessoa> tabelaPessoas;
 	private static PessoaControl instancia;
 
-	/**
-	 * METODO QUE UTILIZA O PADRAO SINGLETON POSSIBILITANDO QUE SE MANIPULE SEMPRE O
-	 * MESMO OBJETO NA MEMORIA RAM E NAO SE PERCA A REFERENCIA DE MEMORIA
-	 * 
-	 * @return
-	 */
 	public static PessoaControl getInstancia() {
 
 		if (instancia == null) {
 			instancia = new PessoaControl();
-			
+			tabelaPessoas = new ArrayList<>();
+
 		}
 
 		return instancia;
@@ -32,7 +27,7 @@ public class PessoaControl {
 	}
 
 	// INSERT
-	public boolean inserir(Pessoa p) {
+	public boolean insert(Pessoa p) {
 		if (p != null) {
 			tabelaPessoas.add(p);
 			return true;
@@ -41,11 +36,11 @@ public class PessoaControl {
 	}
 
 	// UPDATE
-	public boolean alterar(Pessoa p, String email) {
+	public boolean update(Pessoa p, String senha) {
 
 		for (Pessoa pessoa : tabelaPessoas) {
 
-			if (pessoa.getEmail() == email) {
+			if (pessoa.getEmail() == senha) {
 				pessoa.setNome(p.getNome());
 				return true;
 			}
@@ -54,11 +49,11 @@ public class PessoaControl {
 	}
 
 	// DELETE
-	public boolean deletar(Pessoa p, String email) {
+	public boolean deletar(Pessoa p, String senha) {
 
 		for (Pessoa pessoa : tabelaPessoas) {
-			if (pessoa.getEmail() == email) {
-				tabelaPessoas.remove(pessoa);
+			if (pessoa.getEmail() == senha) {
+				tabelaPessoas.remove(senha);
 				return true;
 			}
 		}
@@ -72,7 +67,12 @@ public class PessoaControl {
 	}
 
 	public Pessoa efetuarLogin(String login, String senha) {
-
+			for (Pessoa pessoa : tabelaPessoas) {
+				if (pessoa.getNome().equals(login) && pessoa.getSenha().equals(senha)) {
+					return pessoa;
+				}
+				
+			}
 		return null;
 	}
 

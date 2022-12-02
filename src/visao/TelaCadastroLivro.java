@@ -120,7 +120,7 @@ public class TelaCadastroLivro extends JFrame {
 				}
 				
 				LivroControl tabelaLivro = LivroControl.getInstancia();
-				boolean inserir = tabelaLivro.inserir(novoLivro);
+				boolean inserir = tabelaLivro.insert(novoLivro);
 				
 				if (inserir == true) {
 					JOptionPane.showMessageDialog(null,"Livro cadastrado com sucesso!");

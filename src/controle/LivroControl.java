@@ -19,16 +19,22 @@ public class LivroControl {
 		return instancia;
 	} 
 	
-	public boolean inserir(Livro l) {
+	public boolean insert (Livro l) {
+		
+		if (l != null) {
+			this.tabelaLivros.add(l);
+			
+			return true;
+		}
 		
 		return false;
 	}
 	
-	public boolean alterar(Livro l) {
+	public boolean update(Livro l) {
 		return false;
 	}
 	
-	public boolean deletar (Livro l, int idLivro) {
+	public boolean delete(Livro l, int idLivro) {
 		return false;
 	}
 	

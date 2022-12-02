@@ -228,7 +228,7 @@ public class TelaCadastroUsuario extends JFrame {
 				}
 								
 				PessoaControl tabelaPessoa =  PessoaControl.getInstancia();
-				boolean inserir = tabelaPessoa.inserir(novaPessoa);
+				boolean inserir = tabelaPessoa.insert(novaPessoa);
 
 				if (inserir == true) {
 					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
