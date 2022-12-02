@@ -20,12 +20,11 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class TelaGeral extends JFrame {
 
 	private JPanel contentPane;
-	private JScrollPane scrollPane;
-	private JTable tableUsuario;
 	private JScrollPane scrollPane_1;
 	private JTable tableLivros;
 	
@@ -57,13 +56,6 @@ public class TelaGeral extends JFrame {
 		btnNewButton.setBounds(379, 11, 143, 32);
 		contentPane.add(btnNewButton);
 
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 361, 193);
-		contentPane.add(scrollPane);
-
-		tableUsuario = new JTable();
-		scrollPane.setViewportView(tableUsuario);
-
 		scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(10, 214, 533, 387);
 		contentPane.add(scrollPane_1);
@@ -90,11 +82,33 @@ public class TelaGeral extends JFrame {
 				livroSelecionado.getAutor();
 				livroSelecionado.getGenero();
 				livroSelecionado.getQuantPag();
-				livroSelecionado.getTituloLivro();
-				
+				livroSelecionado.getTituloLivro();	
 			}
 		});
 		scrollPane_1.setViewportView(tableLivros);
+		
+		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAlterar.setBounds(379, 180, 89, 23);
+		contentPane.add(btnAlterar);
+		
+		JButton btnDeletar = new JButton("Deletar");
+		btnDeletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnDeletar.setBounds(379, 150, 89, 23);
+		contentPane.add(btnDeletar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 359, 184);
+		contentPane.add(scrollPane);
+		
+		JTextArea textAreaUsuario = new JTextArea();
+		scrollPane.setViewportView(textAreaUsuario);
 
 	}
 }
