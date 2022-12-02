@@ -225,6 +225,19 @@ public class TelaCadastroUsuario extends JFrame {
 					novaPessoa.setSenha(senha);
 				}
 				
+				PessoaControl tabelaPessoa = new PessoaControl();
+				boolean inserir = tabelaPessoa.inserir(novaPessoa);
+
+				if (inserir == true) {
+					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+					
+					textNomeUsuario.setText(null);
+					textDataNasc.setText(null);
+					textEmail.setText(null);
+					textCpf.setText(null);
+				} else {
+					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
+				}
 				dispose();
 				TelaGeral telaGeralG = new TelaGeral();
 				telaGeralG.setLocationRelativeTo(null);
