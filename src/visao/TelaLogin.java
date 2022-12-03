@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -75,7 +77,7 @@ public class TelaLogin extends JFrame {
 				if (pessoa != null) {
 					
 					dispose();
-					TelaGeral telaGeral = new TelaGeral();
+					TelaGeral telaGeral = new TelaGeral(pessoa);
 					telaGeral.setLocationRelativeTo(null);
 					telaGeral.setVisible(true);
 					
@@ -104,7 +106,7 @@ public class TelaLogin extends JFrame {
 		JLabel lblNewLabel = new JLabel("Welcome");
 		lblNewLabel.setForeground(new Color(153, 0, 102));
 		lblNewLabel.setFont(new Font("Vijaya", Font.BOLD, 40));
-		lblNewLabel.setBounds(224, 28, 121, 42);
+		lblNewLabel.setBounds(224, 28, 183, 42);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Seja bem-vindo(a) a sua estante virtual ");
@@ -117,7 +119,7 @@ public class TelaLogin extends JFrame {
 		lblNewLabel_2.setBackground(new Color(255, 255, 255));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setLabelFor(this);
-		lblNewLabel_2.setBounds(178, 121, 258, 14);
+		lblNewLabel_2.setBounds(10, 121, 526, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Nome");

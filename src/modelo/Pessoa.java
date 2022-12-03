@@ -10,7 +10,7 @@ public class Pessoa {
 	private String dataNasc;
 	private String cpf;
 	private String cidade;
-	private ArrayList<Livro> livrosPessoa;
+	private ArrayList<Livro> livrosPessoa = new ArrayList<Livro>();
 	
 
 	public String getNome() {

@@ -3,44 +3,42 @@ package controle;
 import java.util.ArrayList;
 
 import modelo.Livro;
+import modelo.Pessoa;
 
 public class LivroControl {
 	
-	public static ArrayList<Livro> tabelaLivros;
 	private static LivroControl instancia;
 	
 	public static LivroControl getInstancia() {
 
 		if (instancia == null) {
 				instancia = new LivroControl();
-				tabelaLivros = new ArrayList<>();
 		}
 
 		return instancia;
 	} 
 	
-	public boolean insert (Livro l) {
+	public boolean insert (Pessoa pessoa, Livro l) {
 		
 		if (l != null) {
-			this.tabelaLivros.add(l);
-			
+			pessoa.getLivrosPessoa().add(l);
 			return true;
 		}
 		
 		return false;
 	}
 	
-	public boolean update(Livro l) {
+	public boolean update(Pessoa pessoa, Livro l) {
 		return false;
 	}
 	
-	public boolean delete(Livro l, int idLivro) {
-		return false;
-	}
-	
-	public ArrayList<Livro> listaLivro(){
+	public boolean delete(Pessoa pessoa, Livro l) {
 		
-		return null;
+		if (l != null) {
+			pessoa.getLivrosPessoa().remove(l);
+			return true;
+		}
+		
+		return false;
 	}
-	
 }

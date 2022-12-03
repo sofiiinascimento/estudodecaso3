@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 
 import controle.LivroControl;
 import modelo.Livro;
+import modelo.Pessoa;
 
 public class TelaCadastroLivro extends JFrame {
 	private JTextField textNomeLivro;
@@ -26,7 +27,7 @@ public class TelaCadastroLivro extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaCadastroLivro() {
+	public TelaCadastroLivro(Pessoa pessoa) {
 		setBackground(new Color(204, 255, 255));
 		getContentPane().setBackground(new Color(255, 255, 255));
 		getContentPane().setForeground(new Color(102, 51, 102));
@@ -92,9 +93,9 @@ public class TelaCadastroLivro extends JFrame {
 				String nomeLivro = textNomeLivro.getText();
 				String nomeAutor = textNomeAutor.getText();
 				String quantPag = textQuantPag.getText();
-				String genero = (String) areaGenero.getSelectedItem();
+				String genero = ""+areaGenero.getSelectedItem();
 				
-				modelo.Livro novoLivro = new modelo.Livro ();
+				Livro novoLivro = new Livro ();
 				if (nomeLivro == null || nomeLivro.isEmpty()) {
 					JOptionPane.showMessageDialog(null,"Campo nome do livro não foi preenchido");				
 				} else {
@@ -107,20 +108,20 @@ public class TelaCadastroLivro extends JFrame {
 					novoLivro.setAutor(nomeAutor);
 				}
 				
+				if (genero == null || genero.isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Campo do gênero não foi preenchido");				
+				} else {
+					novoLivro.setGenero(genero);
+				}
+				
 				if (quantPag == null || quantPag.isEmpty()) {
 					JOptionPane.showMessageDialog(null,"Campo da quantidade de páginas não foi preenchido");				
 				} else {
 					novoLivro.setQuantPag(quantPag);
 				}
 				
-				if (genero == null || genero.isEmpty()) {
-					JOptionPane.showMessageDialog(null,"Campo do gênero não foi preenchido");				
-				} else {
-					novoLivro.setQuantPag(genero);
-				}
-				
 				LivroControl tabelaLivro = LivroControl.getInstancia();
-				boolean inserir = tabelaLivro.insert(novoLivro);
+				boolean inserir = tabelaLivro.insert(pessoa, novoLivro);
 				
 				if (inserir == true) {
 					JOptionPane.showMessageDialog(null,"Livro cadastrado com sucesso!");
@@ -134,7 +135,7 @@ public class TelaCadastroLivro extends JFrame {
 				}
 				
 				dispose();
-				TelaGeral telaGeralG = new TelaGeral();
+				TelaGeral telaGeralG = new TelaGeral(pessoa);
 				telaGeralG.setLocationRelativeTo(null);
 				telaGeralG.setVisible(true);
 				
@@ -162,7 +163,7 @@ public class TelaCadastroLivro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				TelaGeral telaGeralG = new TelaGeral();
+				TelaGeral telaGeralG = new TelaGeral(pessoa);
 				telaGeralG.setLocationRelativeTo(null);
 				telaGeralG.setVisible(true);
 				

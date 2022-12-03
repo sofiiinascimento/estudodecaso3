@@ -46,7 +46,7 @@ public class TelaCadastroUsuario extends JFrame {
 		lblCadUsuario.setForeground(new Color(255, 51, 153));
 
 		lblCadUsuario.setFont(new Font("Segoe Script", Font.PLAIN, 27));
-		lblCadUsuario.setBounds(155, 50, 227, 30);
+		lblCadUsuario.setBounds(157, 58, 227, 30);
 		lblCadUsuario.setFont(new Font("Segoe Script", Font.PLAIN, 25));
 		lblCadUsuario.setBounds(160, 53, 227, 30);
 		contentPane.add(lblCadUsuario);
@@ -70,7 +70,7 @@ public class TelaCadastroUsuario extends JFrame {
 		JLabel lblCasdDataNasc = new JLabel("Data de nascimento:");
 		lblCasdDataNasc.setForeground(new Color(153, 51, 102));
 		lblCasdDataNasc.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
-		lblCasdDataNasc.setBounds(306, 112, 173, 22);
+		lblCasdDataNasc.setBounds(202, 118, 173, 22);
 		contentPane.add(lblCasdDataNasc);
 
 		textDataNasc = new JTextField();
@@ -79,7 +79,7 @@ public class TelaCadastroUsuario extends JFrame {
 		contentPane.add(lblCasdDataNasc);
 
 		textDataNasc = new JTextField();
-		textDataNasc.setBounds(300, 160, 122, 20);
+		textDataNasc.setBounds(294, 159, 122, 20);
 		contentPane.add(textDataNasc);
 		textDataNasc.setColumns(10);
 
@@ -243,7 +243,7 @@ public class TelaCadastroUsuario extends JFrame {
 					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
 				}
 				dispose();
-				TelaGeral telaGeralG = new TelaGeral();
+				TelaGeral telaGeralG = new TelaGeral(novaPessoa);
 				telaGeralG.setLocationRelativeTo(null);
 				telaGeralG.setVisible(true);
 				

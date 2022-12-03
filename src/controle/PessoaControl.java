@@ -23,8 +23,7 @@ public class PessoaControl {
 	/**
 	 * CONSTRUTOR DA CLASSE
 	 */
-	public PessoaControl() {
-	}
+	public PessoaControl() {}
 
 	// INSERT
 	public boolean insert(Pessoa p) {
