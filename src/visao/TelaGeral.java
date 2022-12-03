@@ -102,8 +102,10 @@ public class TelaGeral extends JFrame {
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
-				
+				dispose();
+				TelaAlterarLivro tela = new TelaAlterarLivro(pessoa, livroSelecionado);
+				tela.setLocationRelativeTo(null);
+				tela.setVisible(true);
 				
 			}
 		});

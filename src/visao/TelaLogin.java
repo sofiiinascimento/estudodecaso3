@@ -119,7 +119,7 @@ public class TelaLogin extends JFrame {
 		lblNewLabel_2.setBackground(new Color(255, 255, 255));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setLabelFor(this);
-		lblNewLabel_2.setBounds(10, 121, 526, 29);
+		lblNewLabel_2.setBounds(178, 121, 304, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Nome");

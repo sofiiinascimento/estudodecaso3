@@ -28,8 +28,13 @@ public class LivroControl {
 		return false;
 	}
 	
-	public boolean update(Pessoa pessoa, Livro l) {
-		return false;
+	public boolean update(Pessoa pessoa, Livro livroAntigo, Livro livroNovo) {
+		
+		int posicao = pessoa.getLivrosPessoa().indexOf(livroAntigo);
+		pessoa.getLivrosPessoa().remove(livroAntigo);
+		pessoa.getLivrosPessoa().add(posicao, livroNovo);
+		
+		return true;
 	}
 	
 	public boolean delete(Pessoa pessoa, Livro l) {
