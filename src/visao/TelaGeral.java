@@ -54,7 +54,7 @@ public class TelaGeral extends JFrame {
 		setContentPane(contentPane);
 
 		JButton btnNewButton = new JButton("Cadastrar um livro");
-		btnNewButton.setBounds(379, 11, 143, 32);
+		btnNewButton.setBounds(379, 23, 143, 32);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -99,7 +99,7 @@ public class TelaGeral extends JFrame {
 		scrollPane_1.setViewportView(tableLivros);
 		
 		JButton btnAlterar = new JButton("Alterar");
-		btnAlterar.setBounds(379, 180, 89, 23);
+		btnAlterar.setBounds(379, 172, 89, 23);
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -113,7 +113,7 @@ public class TelaGeral extends JFrame {
 		contentPane.add(btnAlterar);
 		
 		JButton btnDeletar = new JButton("Deletar");
-		btnDeletar.setBounds(379, 150, 89, 23);
+		btnDeletar.setBounds(379, 138, 89, 23);
 		btnDeletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
