@@ -69,7 +69,7 @@ public class TelaLogin extends JFrame {
 				telaCadUsuario.setVisible(true);
 			}
 		});
-		btnCadastrar.setBounds(339, 254, 183, 23);
+		btnCadastrar.setBounds(181, 427, 183, 23);
 		contentPane.add(btnCadastrar);
 		
 		JLabel lblNewLabel = new JLabel("Welcome");
@@ -94,7 +94,7 @@ public class TelaLogin extends JFrame {
 		
 		JLabel lblNewLabel_3 = new JLabel("Nome");
 		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblNewLabel_3.setBounds(52, 253, 51, 14);
+		lblNewLabel_3.setBounds(116, 265, 51, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Porém, se você for um usuário, faça seu login e acesse sua estante :)");
@@ -104,22 +104,27 @@ public class TelaLogin extends JFrame {
 		
 		JLabel lblNewLabel_5 = new JLabel("Senha");
 		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblNewLabel_5.setBounds(52, 293, 46, 14);
+		lblNewLabel_5.setBounds(116, 305, 46, 14);
 		contentPane.add(lblNewLabel_5);
 				
 						txtUsuario = new JTextField();
-						txtUsuario.setBounds(116, 248, 187, 29);
+						txtUsuario.setBounds(181, 260, 187, 29);
 						contentPane.add(txtUsuario);
 						txtUsuario.setColumns(10);
 						
 						pwdSenha = new JPasswordField();
-						pwdSenha.setBounds(116, 288, 187, 29);
+						pwdSenha.setBounds(181, 300, 187, 29);
 						contentPane.add(pwdSenha);
 						
-								JButton btnLogar = new JButton("LOGAR");
+								JButton btnLogar = new JButton("ENTRAR");
 								btnLogar.setFont(new Font("Tahoma", Font.PLAIN, 13));
-								btnLogar.setBounds(171, 343, 76, 23);
+								btnLogar.setBounds(236, 356, 89, 23);
 								contentPane.add(btnLogar);
+								
+								JLabel lblNewLabel_6 = new JLabel("LOGIN");
+								lblNewLabel_6.setFont(new Font("Source Sans Pro", Font.BOLD, 20));
+								lblNewLabel_6.setBounds(251, 213, 128, 14);
+								contentPane.add(lblNewLabel_6);
 								btnLogar.addActionListener(new ActionListener() {
 									public void actionPerformed(ActionEvent e) {
 
