@@ -127,7 +127,7 @@ public class TelaAlterarLivro extends JFrame {
 				boolean inserir = tabelaLivro.update(pessoa, livro, novoLivro);
 				
 				if (inserir == true) {
-					JOptionPane.showMessageDialog(null,"Livro cadastrado com sucesso!");
+					JOptionPane.showMessageDialog(null,"Livro alterado com sucesso!");
 					
 					textNomeLivro.setText(null);
 					textNomeAutor.setText(null);

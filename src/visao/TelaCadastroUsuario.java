@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import controle.PessoaControl;
 import modelo.Pessoa;
+import javax.swing.JPasswordField;
 
 public class TelaCadastroUsuario extends JFrame {
 
@@ -27,7 +28,7 @@ public class TelaCadastroUsuario extends JFrame {
 	private JTextField textCpf;
 	private JTextField textField;
 	private JTextField textCidade;
-	private JTextField textSenha;
+	private JPasswordField pwdSenha;
 
 	/**
 	 * Create the frame.
@@ -180,7 +181,7 @@ public class TelaCadastroUsuario extends JFrame {
 				String email = textEmail.getText();
 				String cpf = textCpf.getText();
 				String cidade = textCidade.getText();
-				String senha = textSenha.getText();
+				String senha = pwdSenha.getText();
 				String item = (String) areaEstado.getSelectedItem();
 				
 				
@@ -238,7 +239,7 @@ public class TelaCadastroUsuario extends JFrame {
 					textEmail.setText(null);
 					textCpf.setText(null);
 					textCidade.setText(null);
-					textSenha.setText(null);
+					pwdSenha.setText(null);
 				} else {
 					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
 				}
@@ -275,9 +276,8 @@ public class TelaCadastroUsuario extends JFrame {
 		lblNewLabel_2.setBounds(10, 370, 63, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		textSenha = new JTextField();
-		textSenha.setBounds(83, 370, 141, 20);
-		contentPane.add(textSenha);
-		textSenha.setColumns(10);
+		pwdSenha = new JPasswordField();
+		pwdSenha.setBounds(68, 370, 102, 20);
+		contentPane.add(pwdSenha);
 	}
 }
