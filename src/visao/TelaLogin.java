@@ -52,46 +52,15 @@ public class TelaLogin extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 562, 568);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(255, 228, 225));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		txtUsuario = new JTextField();
-		txtUsuario.setBounds(73, 212, 143, 20);
-		contentPane.add(txtUsuario);
-		txtUsuario.setColumns(10);
-
-		JButton btnLogar = new JButton("LOGAR");
-		btnLogar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				String nome = txtUsuario.getText();
-				String senha = pwdSenha.getText();
-				
-				PessoaControl tabelaPessoas = new PessoaControl();
-				Pessoa pessoa = tabelaPessoas.efetuarLogin(nome, senha);
-				
-				if (pessoa != null) {
-					
-					dispose();
-					TelaGeral telaGeral = new TelaGeral(pessoa);
-					telaGeral.setLocationRelativeTo(null);
-					telaGeral.setVisible(true);
-					
-				} else {
-					JOptionPane.showMessageDialog(null,"Não foi possível achar esse usuário :(");
-				}
-				
-			
-			}
-		});
-		btnLogar.setBounds(45, 319, 89, 23);
-		contentPane.add(btnLogar);
-
 		btnCadastrar = new JButton("CADASTRAR USUARIO");
+		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -100,34 +69,77 @@ public class TelaLogin extends JFrame {
 				telaCadUsuario.setVisible(true);
 			}
 		});
-		btnCadastrar.setBounds(318, 265, 143, 23);
+		btnCadastrar.setBounds(350, 271, 161, 23);
 		contentPane.add(btnCadastrar);
 		
 		JLabel lblNewLabel = new JLabel("Welcome");
 		lblNewLabel.setForeground(new Color(153, 0, 102));
 		lblNewLabel.setFont(new Font("Vijaya", Font.BOLD, 40));
-		lblNewLabel.setBounds(224, 28, 183, 42);
+		lblNewLabel.setBounds(181, 28, 183, 42);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Seja bem-vindo(a) a sua estante virtual ");
 		lblNewLabel_1.setForeground(new Color(153, 0, 51));
 		lblNewLabel_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(138, 56, 332, 54);
+		lblNewLabel_1.setBounds(100, 69, 349, 64);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Se for sua primeira vez aqui, se cadastre!\r\nPorém, se você for um usuário, \r\nfaça seu login e tenha acesso a sua estante :)");
+		JLabel lblNewLabel_2 = new JLabel("Se for sua primeira vez aqui, se cadastre!\r\n");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel_2.setBackground(new Color(255, 255, 255));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setLabelFor(this);
-		lblNewLabel_2.setBounds(178, 121, 304, 14);
+		lblNewLabel_2.setBounds(116, 144, 304, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Nome");
-		lblNewLabel_3.setBounds(10, 215, 46, 14);
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(52, 248, 51, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		pwdSenha = new JPasswordField();
-		pwdSenha.setBounds(73, 267, 129, 19);
-		contentPane.add(pwdSenha);
+		JLabel lblNewLabel_4 = new JLabel("Porém, se você for um usuário, faça seu login e acesse sua estante :)");
+		lblNewLabel_4.setBounds(89, 159, 378, 14);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Senha");
+		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblNewLabel_5.setBounds(52, 274, 46, 14);
+		contentPane.add(lblNewLabel_5);
+				
+						txtUsuario = new JTextField();
+						txtUsuario.setBounds(120, 247, 157, 20);
+						contentPane.add(txtUsuario);
+						txtUsuario.setColumns(10);
+						
+						pwdSenha = new JPasswordField();
+						pwdSenha.setBounds(120, 273, 157, 20);
+						contentPane.add(pwdSenha);
+						
+								JButton btnLogar = new JButton("LOGAR");
+								btnLogar.setBounds(140, 319, 76, 23);
+								contentPane.add(btnLogar);
+								btnLogar.addActionListener(new ActionListener() {
+									public void actionPerformed(ActionEvent e) {
+
+										String nome = txtUsuario.getText();
+										String senha = pwdSenha.getText();
+										
+										PessoaControl tabelaPessoas = new PessoaControl();
+										Pessoa pessoa = tabelaPessoas.efetuarLogin(nome, senha);
+										
+										if (pessoa != null) {
+											
+											dispose();
+											TelaGeral telaGeral = new TelaGeral(pessoa);
+											telaGeral.setLocationRelativeTo(null);
+											telaGeral.setVisible(true);
+											
+										} else {
+											JOptionPane.showMessageDialog(null,"Não foi possível achar esse usuário :(");
+										}
+										
+									
+									}
+								});
 	}
 }
