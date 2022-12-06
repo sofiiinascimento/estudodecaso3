@@ -47,7 +47,8 @@ public class TelaGeral extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 569, 662);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 250, 250));
+		contentPane.setForeground(new Color(255, 192, 203));
+		contentPane.setBackground(new Color(255, 192, 203));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -142,6 +143,8 @@ public class TelaGeral extends JFrame {
 		contentPane.add(btnSair);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setForeground(new Color(255, 192, 203));
 		panel.setBounds(12, 11, 337, 181);
 		contentPane.add(panel);
 		panel.setLayout(null);
