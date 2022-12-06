@@ -48,7 +48,7 @@ public class TelaGeral extends JFrame {
 		setBounds(100, 100, 569, 662);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 192, 203));
-		contentPane.setBackground(new Color(255, 192, 203));
+		contentPane.setBackground(new Color(255, 228, 225));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
