@@ -145,7 +145,7 @@ public class TelaGeral extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setForeground(new Color(255, 192, 203));
-		panel.setBounds(12, 11, 337, 181);
+		panel.setBounds(12, 11, 363, 181);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -172,7 +172,7 @@ public class TelaGeral extends JFrame {
 		txtNome = new JTextField();
 		txtNome.setText(pessoa.getNome());
 		txtNome.setEditable(false);
-		txtNome.setBounds(115, 10, 185, 20);
+		txtNome.setBounds(115, 10, 240, 20);
 		panel.add(txtNome);
 		txtNome.setColumns(10);
 		
@@ -180,28 +180,28 @@ public class TelaGeral extends JFrame {
 		txtEmail.setText(pessoa.getEmail());
 		txtEmail.setEditable(false);
 		txtEmail.setColumns(10);
-		txtEmail.setBounds(115, 40, 185, 20);
+		txtEmail.setBounds(115, 40, 239, 20);
 		panel.add(txtEmail);
 		
 		txtData = new JTextField();
 		txtData.setText(pessoa.getDataNasc());
 		txtData.setEditable(false);
 		txtData.setColumns(10);
-		txtData.setBounds(115, 70, 185, 20);
+		txtData.setBounds(115, 70, 95, 20);
 		panel.add(txtData);
 		
 		txtCpf = new JTextField();
 		txtCpf.setText(pessoa.getCpf());
 		txtCpf.setEditable(false);
 		txtCpf.setColumns(10);
-		txtCpf.setBounds(115, 100, 185, 20);
+		txtCpf.setBounds(115, 100, 119, 20);
 		panel.add(txtCpf);
 		
 		txtCidade = new JTextField();
 		txtCidade.setText(pessoa.getCidade());
 		txtCidade.setEditable(false);
 		txtCidade.setColumns(10);
-		txtCidade.setBounds(115, 130, 185, 20);
+		txtCidade.setBounds(115, 130, 239, 20);
 		panel.add(txtCidade);
 
 	}

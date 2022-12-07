@@ -84,7 +84,10 @@ public class TelaCadastroLivro extends JFrame {
 		areaGenero.setBounds(22, 309, 133, 25);
 		areaGenero.addItem(" ");
 		areaGenero.addItem("Fantasia");
-		areaGenero.addItem("Romance");
+		areaGenero.addItem("Política");
+		areaGenero.addItem("Distopia");
+		areaGenero.addItem("Não ficção");
+		areaGenero.addItem("Romance de época");
 		getContentPane().add(areaGenero);
 
 		JButton btnCadastroLivro = new JButton("Cadastrar");

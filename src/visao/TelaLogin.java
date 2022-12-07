@@ -75,7 +75,7 @@ public class TelaLogin extends JFrame {
 		JLabel lblNewLabel = new JLabel("Welcome");
 		lblNewLabel.setForeground(new Color(153, 0, 102));
 		lblNewLabel.setFont(new Font("Vijaya", Font.BOLD, 40));
-		lblNewLabel.setBounds(181, 28, 183, 42);
+		lblNewLabel.setBounds(217, 28, 129, 42);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Seja bem-vindo(a) a sua estante virtual ");
